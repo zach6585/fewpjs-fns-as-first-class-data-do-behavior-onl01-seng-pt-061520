@@ -11,21 +11,20 @@ function handleClick(e) {
 
 /* Write your implementation of greet() */
 function greet(time) {
-  if (parseInt(time.split(":")[0]) < 12) {
+  let intval = parseInt(time.split(":")[0])
+  
+  if (intval < 12) {
     return "Good Morning";
   }
 
-  else if (12 <= parseInt(time.split(":")[0]) && parseInt(time.split(":")[0]) <= 17) {
-    return "Good Afternoon";
-  }
-
-  else if (parseInt(time.split(":")[0]) > 17) {
+  else if (intval > 17) {
     return "Good Evening";
 
   
   }
+
   else {
-    return time;
+    return "Good Afternoon";
   }
 
 }
@@ -33,5 +32,6 @@ function greet(time) {
 
 function displayMessage(message) {
     let header = document.getElementById("greeting");
-    header.innerHTML = message;
+    header.innerText = message;
 }
+
